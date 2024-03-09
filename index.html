@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>piercer-error</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+  <script data-goatcounter="https://ibetyoucountsheep.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <style>
+    body {
+      background-color: #f0f2f5;
+      background-image: url('https://www.transparenttextures.com/patterns/light-noise-diagonal.png');
+    }
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    h1 {
+      color: #0366d6;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    p {
+      color: #4a5568;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>piercer-error</h1>
+    <div id="textContent"></div>
+  </div>
+  <script>
+    fetch('docs/readme.md')
+      .then(response => response.text())
+      .then(text => {
+        document.getElementById('textContent').innerText = text;
+      })
+      .catch(error => console.log('Error loading the textContent:', error));
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+{
+  "name": "piercer-error",
+  "version": "0.0.2",
+  "description": "Catch errors and print them on the screen. Meant to be used with a cdn.",
+  "type": "module",
+  "module": "src/index.esm.js",
+  "main": "src/index.cjs.js",
+  "scripts": {
+    "build": "npx rollup --config src/rollup.config.js",
+    "prepublishOnly": "npm run build && npx shx cp docs/readme.md readme.md",
+    "postpublish": "npx shx rm src/index.esm.js && npx shx rm src/index.cjs.js && npx shx rm readme.md"
+  },
+  "files": [
+    "src/index.esm.js",
+    "src/index.cjs.js",
+    "src/index.js"
+  ],
+  "author": "planetrenox",
+  "license": "CC-BY-4.0",
+  "homepage": "https://planetrenox.github.io/piercer-error",
+  "repository": "git+https://github.com/planetrenox/piercer-error.git",
+  "funding": "https://bit.ly/incessant-vibration",
+  "keywords": [
+    ""
+  ],
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.3"
+  }
+}
